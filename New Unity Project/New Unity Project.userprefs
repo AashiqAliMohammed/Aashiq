@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Players/Player.cs">
     <Files>
       <File FileName="Assets/MyNetworkManager.cs" Line="16" Column="3" />
-      <File FileName="Assets/Players/Player.cs" Line="3" Column="20" />
+      <File FileName="Assets/Players/Player.cs" Line="32" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

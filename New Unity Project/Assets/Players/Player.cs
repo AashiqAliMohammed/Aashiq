@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Player : MonoBehaviour {
+public class Player : NetworkBehaviour {
 
 private Vector3 inputvalue;
 
@@ -14,11 +15,19 @@ private Vector3 inputvalue;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		if (!isLocalPlayer) {
+		return;
+		}
 		inputvalue.x = CrossPlatformInputManager.GetAxis("Horizontal");
 		inputvalue.y = 0f;
 		inputvalue.z = CrossPlatformInputManager.GetAxis("Vertical");
 
 		transform.Translate(inputvalue);
+	}
+	public override void OnStartLocalPlayer ()
+	{
+	GetComponentInChildren<Camera> ().enabled = true;
 	}
 }
